@@ -47,7 +47,7 @@
         </script>
 
         <div id="sidebar" class="sidebar">
-            <ul class="chapter"><li><a href="./chapter_1.html"><strong>1.</strong> Chapter 1</a></li></ul>
+            <ul class="chapter"><li><a href="./introduction.html"><strong>1.</strong> はじめに</a></li><li><strong>2.</strong> ロードマップ</li><li><ul class="section"><li><a href="./loadmap/0.0.1.html"><strong>2.1.</strong> 0.0.1</a></li></ul></li><li><strong>3.</strong> 言語機能</li><li><ul class="section"><li><strong>3.1.</strong> モジュール</li><li><strong>3.2.</strong> 型</li><li><strong>3.3.</strong> クラス</li><li><strong>3.4.</strong> 文</li><li><strong>3.5.</strong> 式</li><li><strong>3.6.</strong> 関数</li><li><strong>3.7.</strong> テンプレート</li><li><strong>3.8.</strong> コンパイル時実行</li></ul></li><li><strong>4.</strong> ライブラリ</li></ul>
         </div>
 
         <div id="page-wrapper" class="page-wrapper">
@@ -67,8 +67,158 @@
                 </div>
 
                 <div id="content" class="content">
-                    <h1>Chapter 1</h1>
-<p>rill-docs. hello!</p>
+                    <h1>The Rill Programming Language</h1>
+<h2>このページはなに</h2>
+<p>プログラミング言語Rillのドキュメントとメモのような何かを書きます。処理系は以下にあります。</p>
+<ul>
+<li><a href="https://github.com/yutopp/rill">yutopp/rill</a></li>
+</ul>
+<h2>Rill とは</h2>
+<p>Rillは、静的型付きシステムプログラミング言語です。現在開発中です。</p>
+<p>この言語では、システム向けでもアプリケーションでも楽しく自由に作れることを目標にしています。<br />
+そのために、<em>ゼロオーバーヘッドのコア機能</em>、<em>制限のないコンパイル時実行</em>や、<em>モジュール性の高いライブラリとランタイム</em>を提供します。<br />
+基本はゼロオーバーヘッドな言語機能と小さいランタイムをベースに、その上にGCなどのリッチな言語機能やランタイムもオプションとして実装し、ユーザーがターゲットの環境に合わせて自由に言語機能やランタイムを切り替えたり、他の言語とのFFIをメタプログラミングで自動生成して資産を楽に使えるようにできることを目指しています。<br />
+例えば、値のコピーやメモリの配置に気を使いながら最小限のランタイムを使ってシステム向けのプログラムを書いたり、速度やメモリ効率を求める部分を細かく書いたり、一方ではコンパイル時に自動生成したFFIを用いて他言語のランタイムの資産を楽に使ったり、GCをサポートするランタイムを使ってリッチにアプリケーション向けのプログラムを書いたりしたいということです！！！</p>
+<h2>参考にしている言語</h2>
+<ul>
+<li>C++ (C++みたいな自由さ)</li>
+<li>D (コンパイル時処理やUFCS、オーバーロード解決など)</li>
+<li>Scala (マクロ)</li>
+<li>Rust (リソース管理やimmutability)</li>
+</ul>
+<h2>プルリクください</h2>
+<p>絶賛開発中のため、言語のコア機能や標準ライブラリが足りなかったり、設計自体が曖昧な部分が多々あります…<br />
+もし興味を持ってくださったら色々いじって頂けると嬉しいです。</p>
+<h2>よくある質問</h2>
+<h3>dlangで良くないですか？</h3>
+<p>dlangは値ベースでGCのありなしを前提に考えられていたらなあと思っています…</p>
+<h3>rustで良くないですか？</h3>
+<p>ウッ、もっとC++みたいに書きたい！！！</p>
+<h1>ロードマップ - 0.0.1</h1>
+<ul>
+<li>
+<p>[ ] 制御フロー</p>
+<ul>
+<li>[ ] if文</li>
+<li>[ ] if式</li>
+<li>[ ] for文</li>
+<li>[ ] scope文</li>
+<li>[ ] with式</li>
+</ul>
+</li>
+<li>
+<p>[ ] template</p>
+<ul>
+<li>[ ] function</li>
+<li>[ ] class</li>
+<li>[ ] 条件分岐
+<ul>
+<li>[ ] with節 (constraints)</li>
+<li>[ ] static if</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>[ ] variable</p>
+<ul>
+<li>[ ] val</li>
+<li>[ ] ref</li>
+<li>[ ] meta</li>
+<li>[ ] type deduction</li>
+</ul>
+</li>
+<li>
+<p>[ ] immutability</p>
+<ul>
+<li>[ ] mutable</li>
+<li>[ ] const</li>
+<li>[ ] immutable</li>
+</ul>
+</li>
+<li>
+<p>[ ] function</p>
+<ul>
+<li>[ ] external</li>
+<li>[ ] builtin</li>
+<li>[ ] operator</li>
+<li>[ ] return type deduction</li>
+</ul>
+</li>
+<li>
+<p>[ ] call</p>
+<ul>
+<li>[ ] overload resolution</li>
+<li>[ ] UFCS</li>
+<li>[ ] CTFE (meta)</li>
+<li>[ ] destructor call</li>
+</ul>
+</li>
+<li>
+<p>[ ] class</p>
+<ul>
+<li>[ ] member variable</li>
+<li>[ ] member function</li>
+<li>[ ] default ctor
+<ul>
+<li>[ ] implicit</li>
+<li>[ ] trivial</li>
+</ul>
+</li>
+<li>[ ] user-defined ctor</li>
+<li>[ ] copy ctor
+<ul>
+<li>[ ] implicit</li>
+<li>[ ] trivial</li>
+</ul>
+</li>
+<li>[ ] copy assign
+<ul>
+<li>[ ] implicit</li>
+<li>[ ] trivial</li>
+</ul>
+</li>
+<li>[ ] dtor
+<ul>
+<li>[ ] implicit</li>
+<li>[ ] trivial</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>[ ] lifetime <partial></p>
+</li>
+<li>
+<p>[ ] module</p>
+</li>
+<li>
+<p>[ ] basic types <partial></p>
+<ul>
+<li>[ ] uint8</li>
+<li>[ ] int32</li>
+<li>[ ] uint32</li>
+<li>[ ] bool</li>
+<li>[ ] raw_ptr</li>
+</ul>
+</li>
+<li>
+<p>[ ] core lib</p>
+<ul>
+<li>[ ] buildin types (basic types)</li>
+<li>[ ] type functions <partial></li>
+</ul>
+</li>
+<li>
+<p>[ ] std lib</p>
+<ul>
+<li>[ ] stdio <experimental></li>
+<li>[ ] string <experimental></li>
+<li>[ ] libc <experimental></li>
+<li>[ ] assert <experimental></li>
+</ul>
+</li>
+</ul>
 
                 </div>
 
