@@ -1,0 +1,9 @@
+test:
+  override:
+    - ./scripts/build.sh
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - ./scripts/deploy.sh
