@@ -1,6 +1,10 @@
-test:
+compile:
   override:
     - ./scripts/build.sh
+
+test:
+  override:
+    - "true"
 
 deployment:
   production:
