@@ -25,5 +25,5 @@ cd ${WORK_DIR}
 git config user.name "${GIT_USER_NAME}"
 git config user.email "${GIT_USER_EMAIL}"
 git add --all
-git commit --allow-empty -m 'update by rill-docs-ci-deploy'
+git commit --allow-empty -m '[skip ci] auto updated by rill-docs-ci-deploy'
 git push -f origin gh-pages
